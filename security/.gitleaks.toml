@@ -542,7 +542,7 @@ secretGroup = 4
 [[rules]]
 id = "django-key"
 description = "Django Secret Key"
-regex = '''(?i)(SECRET_KEY[a-z0-9_ .\-,]{0,25}(=|>|:=|\|\|:|<=|=>|:).{0,5}['\"]([0-9a-zA-Z\-_=]{8,64})['\"]'''
+regex = '''(?i)(SECRET_KEY[a-z0-9_ .\-,]{0,25})(=|>|:=|\|\|:|<=|=>|:).{0,5}['\"]([0-9a-zA-Z\-_=]{8,64})['\"]'''
 entropy = 3.7
 secretGroup = 4
 
