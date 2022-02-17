@@ -17,7 +17,7 @@ jobs:
       - name: trufflehog-actions-scan
         uses: edplato/trufflehog-actions-scan@master
         with:
-          scanArguments: "--regex --entropy=False --max_depth=5 --rules /regexes.json" 
+          scanArguments: "--regex --entropy=False --max_depth=5 --rules regexes.json" 
       # - name: GitGuardian scan
       #   uses: GitGuardian/gg-shield-action@master
       #   env:
