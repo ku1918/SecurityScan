@@ -16,6 +16,8 @@ jobs:
           fetch-depth: 0 # fetch all history so multiple commits can be scanned
       - name: gitleaks-action
         uses: zricethezav/gitleaks-action@master
+        with:
+          config-path: security/.gitleaks.toml
       # - name: GitGuardian scan
       #   uses: GitGuardian/gg-shield-action@master
       #   env:
