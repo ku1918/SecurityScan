@@ -10,11 +10,24 @@ jobs:
     name: SonarCloud
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0 # fetch all history so multiple commits can be scanned
+      - name: gitleaks-action
+        uses: zricethezav/gitleaks-action@master
+        with:
+          config-path: security/.gitleaks.toml
+      # - name: GitGuardian scan
+      #   uses: GitGuardian/gg-shield-action@master
+      #   env:
+      #     GITHUB_PUSH_BEFORE_SHA: ${{ github.event.before }}
+      #     GITHUB_PUSH_BASE_SHA: ${{ github.event.base }}
+      #     GITHUB_PULL_BASE_SHA:  ${{ github.event.pull_request.base.sha }}
+      #     GITHUB_DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+      #     GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}
+      # - name: SonarCloud Scan
+      #   uses: SonarSource/sonarcloud-github-action@master
+      #   env:
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
