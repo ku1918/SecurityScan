@@ -1,3 +1,4 @@
-SECRET_KEY = 't_5%*+c*m65=djt-dz&%v6yey+lxo1h)f8_2anyzi=(^d&j(k6'
-password = 't_5%*+c*m65=djt-dz&%v6yey+lxo1h)f8_2anyzi=(^d&j(k6'
-PASSWORD = 't_5%*+c*m65=djt-dz&%v6yey+lxo1h)f8_2anyzi=(^d&j(k6'
+EXAMPLE_AWS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+3LONGER_THAN_AWS_KEY=AKIAIOSFODNN73943434ASSDAADDSD
+4TOKEN="Authorization: Bearer 6a75e7238c07457665106e97182825512e3234ed"
+5AWS_ACCESS_KEY=AKIAIOSFODNN73943434
