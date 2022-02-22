@@ -6,18 +6,18 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
-  sonarcloud:
-    name: SonarCloud
+  Build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: 0 # fetch all history so multiple commits can be scanned
-      - name: gitleaks-action
-        uses: zricethezav/gitleaks-action@master
-        with:
-          config-path: security/.gitleaks.toml
+      # - name: gitleaks-action
+      #   uses: zricethezav/gitleaks-action@master
+      #   with:
+      #     config-path: security/.gitleaks.toml
       # - name: GitGuardian scan
       #   uses: GitGuardian/gg-shield-action@master
       #   env:
