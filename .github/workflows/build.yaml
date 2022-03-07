@@ -22,8 +22,7 @@ jobs:
         run: |
           pip install coverage
           coverage run -m unittest test_tutorial.py
-          coverage report
-          coverage xml -o coverage-reports/coverage.xml
+          coverage xml -o coverage-reports/coverage-python.xml
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
