@@ -18,7 +18,7 @@ jobs:
         uses: zricethezav/gitleaks-action@master
         with:
           config-path: security/.gitleaks.toml
-      - Name: Code Coverage
+      - name: Code Coverage
         run: |
           pip install coverage
           coverage run -m unittest test_tutorial.py
