@@ -7,7 +7,7 @@ on:
     types: [opened, synchronize, reopened]
 jobs:
   Build:
-    name: Build
+    name: Builds
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
