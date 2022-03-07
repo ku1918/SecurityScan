@@ -18,6 +18,11 @@ jobs:
         uses: zricethezav/gitleaks-action@master
         with:
           config-path: security/.gitleaks.toml
+      - Name: Code Coverage
+        run: |
+          pip install coverage
+          coverage run -m unittest test_tutorial.py
+          coverage xml -o coverage-reports/coverage.xml
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
